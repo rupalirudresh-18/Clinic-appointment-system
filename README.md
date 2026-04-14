@@ -6,8 +6,7 @@ A full-stack **Django-based web application** designed to streamline clinic oper
 
 ## 🚀 Live Demo
 
-🔗 [[https://render-app-url.onrender.com](https://clinic-appointment-system-2-hjou.onrender.com)
-](https://clinic-appointment-system-2-hjou.onrender.com)
+🔗 https://clinic-appointment-system-2-hjou.onrender.com
 ---
 
 ## ✨ Overview
