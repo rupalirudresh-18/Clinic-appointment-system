@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Admin Dashboard</h2>
+
+<table>
+    <tr>
+        <th>Total Appointments</th>
+        <th>Waiting</th>
+        <th>In Consultation</th>
+        <th>Completed</th>
+    </tr>
+    <tr>
+        <td>{{ total_appointments }}</td>
+        <td>{{ waiting_count }}</td>
+        <td>{{ in_consultation_count }}</td>
+        <td>{{ completed_count }}</td>
+    </tr>
+</table>
+{% endblock %}

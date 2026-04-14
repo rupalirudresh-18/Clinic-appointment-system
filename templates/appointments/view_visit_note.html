@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Visit Note</h2>
+
+<p><strong>Doctor:</strong> {{ appointment.doctor.username }}</p>
+<p><strong>Date:</strong> {{ appointment.slot.date }}</p>
+<p><strong>Status:</strong> {{ appointment.status }}</p>
+
+{% if note %}
+    <table>
+        <tr>
+            <th>Symptoms</th>
+            <td>{{ note.symptoms }}</td>
+        </tr>
+        <tr>
+            <th>Prescription</th>
+            <td>{{ note.prescription }}</td>
+        </tr>
+        <tr>
+            <th>Doctor Notes</th>
+            <td>{{ note.doctor_notes }}</td>
+        </tr>
+    </table>
+{% else %}
+    <p>No visit note has been added yet.</p>
+{% endif %}
+{% endblock %}

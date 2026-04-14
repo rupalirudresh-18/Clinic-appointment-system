@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>My Appointments</h2>
+
+<table>
+    <tr>
+        <th>Doctor</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+    {% for appointment in appointments %}
+    <tr>
+        <td>{{ appointment.doctor.username }}</td>
+        <td>{{ appointment.slot.date }}</td>
+        <td>{{ appointment.status }}</td>
+        <td>
+            {% if appointment.status != 'cancelled' and appointment.status != 'completed' %}
+                <a href="{% url 'cancel_appointment' appointment.id %}" class="btn btn-danger">Cancel</a>
+            {% endif %}
+
+            <a href="{% url 'view_visit_note' appointment.id %}" class="btn btn-success">View Note</a>
+        </td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="4">No appointments found.</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>
+    {% if is_doctor %}
+        My Available Slots
+    {% else %}
+        Available Doctor Slots
+    {% endif %}
+</h2>
+
+<table>
+    <tr>
+        <th>Doctor</th>
+        <th>Specialization</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Action</th>
+    </tr>
+    {% for slot in available_slots %}
+    <tr>
+        <td>{{ slot.doctor.username }}</td>
+        <td>{{ slot.doctor.doctorprofile.specialization }}</td>
+        <td>{{ slot.date }}</td>
+        <td>{{ slot.start_time }} - {{ slot.end_time }}</td>
+        <td>
+            {% if is_patient %}
+                <a href="{% url 'book_appointment' slot.id %}" class="btn">Book</a>
+            {% elif is_doctor %}
+                My Slot
+            {% else %}
+                <a href="{% url 'login' %}" class="btn">Login to Book</a>
+            {% endif %}
+        </td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="5">No slots available.</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
