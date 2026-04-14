@@ -6,8 +6,8 @@ A full-stack **Django-based web application** designed to streamline clinic oper
 
 ## 🚀 Live Demo
 
-🔗 [https://your-render-app-url.onrender.com](https://clinic-appointment-system-2-hjou.onrender.com)
-
+🔗 [[https://render-app-url.onrender.com](https://clinic-appointment-system-2-hjou.onrender.com)
+](https://clinic-appointment-system-2-hjou.onrender.com)
 ---
 
 ## ✨ Overview
@@ -82,7 +82,9 @@ From booking appointments to managing queues and recording visit notes — every
 ```
 smart-clinic/
 │── appointments/
-│── users/
+|── accounts/
+│── dashboard/
+|── doctors/
 │── templates/
 │── static/
 │── db.sqlite3
