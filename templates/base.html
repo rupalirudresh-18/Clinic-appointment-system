@@ -68,7 +68,7 @@
 </head>
 <body>
     <nav>
-    <a href="{% url 'home' %}">Home</a>
+    <a href="{% url 'welcome' %}">Home</a>
 
     {% if user.is_authenticated %}
         {% if user.groups.all.0.name == 'Patient' %}

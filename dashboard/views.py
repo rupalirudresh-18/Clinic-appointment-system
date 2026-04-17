@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from doctors.models import TimeSlot
 
+def welcome(request):
+    return render(request, 'welcome.html')
+
 def home(request):
     is_doctor = request.user.is_authenticated and request.user.groups.filter(name='Doctor').exists()
     is_patient = request.user.is_authenticated and request.user.groups.filter(name='Patient').exists()
